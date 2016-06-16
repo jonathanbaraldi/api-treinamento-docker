@@ -47,17 +47,21 @@ Rodar com o -d coloca em modo destacado, permitindo rodar em background. O parâ
 -------------------------------------------------------
 # 9) Testar a aplicação
 	# docker ps // Ver a porta do container
-	# curl -i 192.168.99.100:49160
+	# curl -i 192.168.99.100:49160/
+	# curl -i 192.168.99.100:49160/html
 		---------------------------------------
 		HTTP/1.1 200 OK
 		X-Powered-By: Express
-		Content-Type: text/html; charset=utf-8
-		Content-Length: 12
-		ETag: W/"c-8O9wgeFTmsAO9bdhtPsBsw"
-		Date: Thu, 16 Jun 2016 13:59:27 GMT
+		Access-Control-Allow-Origin: *
+		Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, PATCH, DELETE
+		Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept
+		Content-Type: application/json; charset=utf-8
+		Content-Length: 64
+		ETag: W/"40-+qlexIdTQNaZv+noPeKNyQ"
+		Date: Thu, 16 Jun 2016 15:27:10 GMT
 		Connection: keep-alive
 
-		Hello world
+		{"Data":"API de Serviços do Jon - retorno em JSON","Ver":"1.0"}
 		---------------------------------------
 
 Também pode-se acessar pelo browser na url 192.168.99.100:49160, e ver o retorno Hello World!

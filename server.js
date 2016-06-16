@@ -1,24 +1,3 @@
-
-/* 
-	// 'use strict';
-	const express = require('express');
-
-	// Constants
-	const PORT = 8080;
-
-	// App
-	const app = express();
-	app.get('/', function (req, res) {
-	  res.send('Hello world\n');
-	});
-
-	app.listen(PORT);
-	console.log('Running on http://localhost:' + PORT);
-
-*/
-
-// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
 var express = require('express'); 
 var app = express();
 var bodyParser = require('body-parser');
@@ -32,7 +11,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   	extended: true
 }));
-
 
 // Configuração da requisição, cabeçalhos, etc. CORS
 app.use(function(req, res, next) {
@@ -78,7 +56,6 @@ app.get('/html',function(req,res){
 });
 
 // ===================================
-
 app.listen(port,function(){
 	console.log("Conectado e escutando na porta :8080");
 });
