@@ -65,6 +65,48 @@ O ip 192.168.99.100, neste caso é o ip da vm do Docker. Esse ip pode ser encont
 	# docker-machine env default
 
 -------------------------------------------------------
-# 10) Remover container que está rodando
+# 10) Fazer push da imagem para o Docker Hub
+	# docker login
+	# docker push <your username>/<your image>
+	# docker push jonathanbaraldi/node-web-app
+
+Esse nome de usuário é o mesmo nome que você usa no Docker Hub.
+
+-------------------------------------------------------
+# 11) Remover container que está rodando
 	# docker rm -f <container id>
+
+
+-------------------------------------------------------
+# 12) Criar Build automatizado
+	1) Criar conta no Docker Hub
+	2) Depois de logado, clicar no menu superior em Create > Create Automated Build
+	3) Clicar em "Link accounts"
+	4) Selecionar o Github ou o Bitbucket
+	5) Selecionar Público e Privado
+	6) Depois na tela do Git, clicar para autorizar.
+	7) Informar a senha do Git
+	8) Feito isso, clique novamente no menu Create > Create Automated Build.
+	9) Selecionar o Autobuild do Github.
+	10) Selecionar o projeto que tenha o Dockerfile.
+	11) Dar nome e detalhes, e clicar para criar
+
+
+Once the Automated Build is configured it will automatically trigger a build and, in a few minutes, you should see your new Automated Build on the Docker Hub Registry. It will stay in sync with your GitHub and Bitbucket repository until you deactivate the Automated Build.
+
+To check the output and status of your Automated Build repositories, click on a repository name within the “Your Repositories” page. Automated Builds are indicated by a check-mark icon next to the repository name. Within the repository details page, you may click on the “Build Details” tab to view the status and output of all builds triggered by the Docker Hub.
+
+Once you’ve created an Automated Build you can deactivate or delete it. You cannot, however, push to an Automated Build with the docker push command. You can only manage it by committing code to your GitHub or Bitbucket repository.
+
+You can create multiple Automated Builds per repository and configure them to point to specific Dockerfile’s or Git branches.
+
+Build triggers
+Automated Builds can also be triggered via a URL on Docker Hub. This allows you to rebuild an Automated build image on demand.
+
+Webhooks
+Webhooks are attached to your repositories and allow you to trigger an event when an image or updated image is pushed to the repository. With a webhook you can specify a target URL and a JSON payload that will be delivered when the image is pushed.
+
+
+
+
 
