@@ -18,6 +18,7 @@ Ver arquivo Dockerfile
 
 -------------------------------------------------------
 # 3) Build da imagem 
+Dentro do diretório onde está o arquivo Dockerfile, rodar o docker build.
 	# docker build -t <your username>/node-web-app .
 
 -------------------------------------------------------
@@ -60,8 +61,10 @@ Rodar com o -d coloca em modo destacado, permitindo rodar em background. O parâ
 		---------------------------------------
 
 Também pode-se acessar pelo browser na url 192.168.99.100:49160, e ver o retorno Hello World!
+O ip 192.168.99.100, neste caso é o ip da vm do Docker. Esse ip pode ser encontrado com: 
+	# docker-machine env default
 
 -------------------------------------------------------
 # 10) Remover container que está rodando
 	# docker rm -f <container id>
-	
+
