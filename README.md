@@ -91,22 +91,23 @@ Esse nome de usuário é o mesmo nome que você usa no Docker Hub.
 	10) Selecionar o projeto que tenha o Dockerfile.
 	11) Dar nome e detalhes, e clicar para criar
 
+Uma vez que os builds automáticos são configurados, eles irão automaticamente fazer novos builds e, em alguns minutos você deve ver o seu build automático no Docker Hub Registry. Ele irá ficar em sincronização com sua conta do GitHub ou BitBucket até você desativar o Build Automático.
 
-Once the Automated Build is configured it will automatically trigger a build and, in a few minutes, you should see your new Automated Build on the Docker Hub Registry. It will stay in sync with your GitHub and Bitbucket repository until you deactivate the Automated Build.
+Você pode ver os detalhes do build, na aba "Build Details". 
 
-To check the output and status of your Automated Build repositories, click on a repository name within the “Your Repositories” page. Automated Builds are indicated by a check-mark icon next to the repository name. Within the repository details page, you may click on the “Build Details” tab to view the status and output of all builds triggered by the Docker Hub.
+Uma vez que você criou um build automático, você pode desativar ou deletar ele. Entretanto, você NÃO PODE fazer push para um build automático com o comando de push. Você pode APENAS gerenciar ele comitando código para seu repositório no Github ou Bitbucket.
 
-Once you’ve created an Automated Build you can deactivate or delete it. You cannot, however, push to an Automated Build with the docker push command. You can only manage it by committing code to your GitHub or Bitbucket repository.
-
-You can create multiple Automated Builds per repository and configure them to point to specific Dockerfile’s or Git branches.
-
-Build triggers
-Automated Builds can also be triggered via a URL on Docker Hub. This allows you to rebuild an Automated build image on demand.
-
-Webhooks
-Webhooks are attached to your repositories and allow you to trigger an event when an image or updated image is pushed to the repository. With a webhook you can specify a target URL and a JSON payload that will be delivered when the image is pushed.
+Você pode criar múltiplos builds automatizados por repositório e configurar eles para apontar para Dockerfile's ou branches específicos
 
 
+-------------------------------------------------------
+# 13) Remover imagem do repositório local
+	# docker rmi -f <id da imagem>
 
+-------------------------------------------------------
+# 14) Fazer pull da nova imagem gerada pelo build automatizado
+	# docker pull <your username>/<your image>
+	# docker pull jonathanbaraldi/api-treinamento-docker
 
+	# docker run -p 49160:8080 -d jonathanbaraldi/api-treinamento-docker
 
