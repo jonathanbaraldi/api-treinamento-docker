@@ -10,6 +10,8 @@ COPY package.json /usr/src/app/
 RUN npm install
 
 COPY teste.js /usr/src/app/
+
+COPY teste2.js /usr/src/app/
 	# Empacotar os fontes da aplicação
 COPY . /usr/src/app
 

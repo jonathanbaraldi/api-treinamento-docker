@@ -25,7 +25,8 @@ app.use(function(req, res, next) {
 app.get('/',function(req,res){
 	var data = {
 		"Data":"",
-		"Ver" : "1.0"
+		"Ver" : "1.0",
+		"Container Platform" : "Rancher-Cattle"
 	};
 	data["Data"] = "API de Serviços do Jon - retorno em JSON";
 	res.json(data);
