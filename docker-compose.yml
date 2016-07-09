@@ -1,0 +1,5 @@
+api-treinamento:
+    image: jonathanbaraldi/api-treinamento-docker
+    ports:
+        - "88:8080"
+        # porta externa, porta interna
